@@ -1,0 +1,46 @@
+1. General usage cases:
+  - export words and their dictionaries from a choosen ebook
+  - read uploaded book online with translation after hoover word and marked unknown words
+  - learn foreign leangue by reading short books from curated list
+
+2. Features available to user on pages:
+  a) Home site:
+  - the presentation of idea
+  - link to the guest words counter
+  - sign up and sign in
+  - link to supported export formats and flashcards learning tools
+  - link to supported dctionaries
+  - link to deeper description of the learing method and its advantages
+
+  b) Dashboard:
+  - select of the dictionary (e.g. a user can learn few languages)
+  - see the list of known words
+  - see the list of sent books and associated with them learnt words
+  - download the list of words to learn from one or multiple books
+  - change password
+  
+3. Definitions:
+  - native language - the native language of user, words are translated to this language
+  - known word - the words that user user knows in a specific language, a word can be known in one
+          language and unknown in another at the same time, this term is not applied to native language
+  - learning format - the list of words in proper format to be imported by user's prefered tool to words learning
+  - language words set - the set of words in a language, words are case insensitive
+
+
+
+User can:
+- get most frequents words from book and transform them to learning format
+- remember learnt words
+- get factor of known words from the book
+
+Web Server:
+- serves the static content
+- manages accounts of users (authentication, preferences)
+- provide user desktop
+
+
+LanLearn Library:
+Core library written in Kotlin. It's used to get from any text (plain text, pdf, epub, etc.) a list of words to learning.
+E.g. user is polish native speaker and knows 3 english words : dog, cat, be. If library get to process a text: "Alicia has a dog and a pen",
+output should be "dog - pies, pen - długopis, have - mieć". Word "Alicia" is omitted because it is a proper noun and a word "a" is omitted because
+it is word without specific meaning.
