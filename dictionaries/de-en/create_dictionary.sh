@@ -17,7 +17,7 @@ TEMP_FILE=`mktemp XXXXXX`
 
 cat "$1" | # ./basic_split_to_valid_and_invalid.sh
     tail -n +33 | head -n -55 | # skip
-    egrep -v "[^][a-żA-Ż;,. -/0-9'{}()<>]" |
+    egrep -v "[^][a-żA-Ż;,. -/0-9'{}()<>]	" |
     egrep -v "ñ" |
     tr ';' ',' | tr '\t' ';' | cut -d ';' -f1,2 | trim_spaces | sed 's/^[^;]*;/\L&\E&/' | # make three columns
     egrep -v 'vulg\.' |
